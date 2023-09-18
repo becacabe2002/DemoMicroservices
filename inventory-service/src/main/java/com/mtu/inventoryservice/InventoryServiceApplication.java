@@ -22,11 +22,11 @@ public class InventoryServiceApplication {
 		return args -> {
 			Inventory inventory1 = new Inventory();
 			inventory1.setSkuCode("obj 1");
-			inventory1.setQuantity(10);
+			inventory1.setQuantity(100);
 
 			Inventory inventory2 = new Inventory();
 			inventory2.setSkuCode("obj 2");
-			inventory2.setQuantity(12);
+			inventory2.setQuantity(100);
 			List<Inventory> invList = new ArrayList<Inventory>();
 			invList.add(inventory1);
 			invList.add(inventory2);
