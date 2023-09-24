@@ -35,7 +35,7 @@ public class OrderService {
 
         List<String> skuCodes = listOrderLineItems.stream().map(OrderLineItems::getSkuCode).toList();
 
-        // Need to check if items are available or not before save order
+        // Need to check if items are available or not before saving order
         // Synchronous communication
         InventoryResponse[] inventoryResponses =
                 webClient.get()
