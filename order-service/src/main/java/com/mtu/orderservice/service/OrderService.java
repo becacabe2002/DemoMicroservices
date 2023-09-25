@@ -22,7 +22,7 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
 
-    private final WebClient webClient;
+    private final WebClient.Builder webClientBuilder;
 
     public void placeOrder(OrderRequest orderRequest){
         Order order = new Order();
@@ -38,8 +38,8 @@ public class OrderService {
         // Need to check if items are available or not before saving order
         // Synchronous communication
         InventoryResponse[] inventoryResponses =
-                webClient.get()
-                        .uri("http://localhost:8082/api/inventory",
+                webClientBuilder.build().get()
+                        .uri("http://inventory-service/api/inventory", // no more hardcode with eureka server
                                 uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes).build())
                         .retrieve()
                         .bodyToMono(InventoryResponse[].class)

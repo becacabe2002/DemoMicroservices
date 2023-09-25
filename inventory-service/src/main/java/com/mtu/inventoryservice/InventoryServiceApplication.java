@@ -2,15 +2,18 @@ package com.mtu.inventoryservice;
 
 import com.mtu.inventoryservice.model.Inventory;
 import com.mtu.inventoryservice.repository.InventoryRepository;
+import com.netflix.discovery.EurekaNamespace;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
+@EnableDiscoveryClient
 public class InventoryServiceApplication {
 
 	public static void main(String[] args) {
