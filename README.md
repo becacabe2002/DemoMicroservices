@@ -28,6 +28,9 @@ There will be **synchronous** and **asynchronous** communication.
 - Mỗi service đăng ký với Eureka sẽ cần gửi ping request tới Eureka Server để thông báo rằng service đó vẫn đang hoạt động
     - Nếu Eureka Server không nhận được thông báo từ một dịch vụ nào đó, dịch vụ đó sẽ bị hủy đăng ký một cách tự động trong Eureka Server
 
+- Discorvery Server sẽ lưu trữ danh sách địa chỉ đăng kí của một service.
+    - Khi một service muốn tìm kiếm địa chỉ của service khác, sẽ check trong danh sách các local copies của địa chỉ đăng kí của service đó.
+    - Trong trường hợp các local copies không hợp lệ, Discovery Server sẽ trả về thông báo rằng service cần tìm không available.
 
 ## Inter Service Communications
 - Using WebClient
