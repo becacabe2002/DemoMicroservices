@@ -11,6 +11,7 @@ There will be **synchronous** and **asynchronous** communication.
 
 ![General Diagram](./General_Diagram.png)
 
+## Service Register
 ### Eureka Server
 > Máy chủ đăng kí dịch vụ trong hệ thống Microservices.
 
@@ -33,8 +34,19 @@ There will be **synchronous** and **asynchronous** communication.
     - Trong trường hợp các local copies không hợp lệ, Discovery Server sẽ trả về thông báo rằng service cần tìm không available.
 
 ## Inter Service Communications
-- Using WebClient
+- Using `WebClient.Builder()`
 
+## API Gateway
 
+✅ **Công dụng**:
+- Phân luồng dựa trên Request Header
+- Authentication
+- Security
+- Cân bằng tải
+- SSL Termination 
 
+> **SSL Termination** - quá trình decrypting luồng thông tin trước khi chuyển nó cho web server. (chuyển đổi giữa TLS protocol -> SSL  protocol)
+
+* Implementing gateway using **Spring Cloud Gateway**.
+  * Default port: 8080
 
